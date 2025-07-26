@@ -14,6 +14,9 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
+format:
+	clang-format -i *.h *.cpp
+
 re: fclean all
 
-.PHONY: all clean re fclean
+.PHONY: all clean re fclean format
