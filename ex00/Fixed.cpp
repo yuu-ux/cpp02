@@ -4,7 +4,7 @@ Fixed::Fixed() : fixed_point_num_(0) {
   std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &copy) {
+Fixed::Fixed(const Fixed &copy) : fixed_point_num_(copy.fixed_point_num_) {
   std::cout << "Copy constructor called" << std::endl;
   *this = copy;
 }
@@ -29,3 +29,4 @@ int Fixed::getRawBits() const {
 void Fixed::setRawBits(int const raw) {
   fixed_point_num_ = raw;
 }
+
