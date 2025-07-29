@@ -14,6 +14,13 @@ Fixed::Fixed(const Fixed &copy) {
   *this = copy;
 }
 
+Fixed &Fixed::operator=(const Fixed &fixed) {
+  if (this != &fixed) {
+    this->fixed_point_num_ = fixed.getRawBits();
+  }
+  return *this;
+}
+
 Fixed::~Fixed() {}
 
 int Fixed::getRawBits() const {
@@ -54,13 +61,6 @@ const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2) {
     if (fixed1 >= fixed2)
         return fixed1; // NOLINT
     return fixed2; // NOLINT
-}
-
-Fixed &Fixed::operator=(const Fixed &fixed) {
-  if (this != &fixed) {
-    this->fixed_point_num_ = fixed.getRawBits();
-  }
-  return *this;
 }
 
 Fixed Fixed::operator+(const Fixed &fixed) const {

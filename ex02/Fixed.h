@@ -9,9 +9,9 @@ class Fixed {
   explicit Fixed(const int value);
   explicit Fixed(const float value);
   Fixed(const Fixed &other);
+  Fixed &operator=(const Fixed &fixed);
   ~Fixed();
 
-  Fixed &operator=(const Fixed &fixed);
   Fixed& operator--();
   Fixed& operator++();
   Fixed operator--(int);
